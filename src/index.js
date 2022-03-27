@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// index.js exists because we render through it to our index.html
 
+import React from "react";
+import ReactDOM from "react-dom";
+// import the component we want to render
+import App from "./App";
+import Context from "./Context";
+import "./index.css";
+
+// what we render in our index.html
 ReactDOM.render(
-  <React.StrictMode>
+    // wrap hole app in Context component
+  <Context>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </Context>,
+  document.querySelector("#root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
